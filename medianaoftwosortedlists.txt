@@ -1,0 +1,18 @@
+var findMedianSortedArrays = function(nums1, nums2) {
+    let result = []
+
+    nums1 = nums1.concat(nums2).sort((a,b) => a - b)
+       let middle = Math.ceil(nums1.length / 2)
+  
+        if(nums1.length % 2 !== 0){
+            return nums1[middle-1].toFixed(5)
+        }else{
+              nums1 = nums1.slice(middle-1,middle+1)
+       let resuls = nums1.reduce((acc, val) => acc + val)/2
+             return resuls.toFixed(5)
+        }    
+    
+    
+
+
+};
