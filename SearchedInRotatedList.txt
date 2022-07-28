@@ -1,0 +1,10 @@
+var search = function(nums, target) {
+    let i = 0;
+    let count = 0;
+    while(nums.length > i){       
+	 if(nums[i] == target){break}
+	 count++;
+	 i++;
+    }
+    return count == nums.length ? -1 : count;
+};

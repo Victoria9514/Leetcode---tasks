@@ -1,0 +1,16 @@
+var searchRange = function(nums, target) {
+        let list = []
+    if(!nums.includes(target)){return [-1,-1]}   
+    let i = 0
+    while(nums.length > i){
+        if(nums[i] == target){
+            list.push(i)
+        }
+        i++
+    }
+    
+    let first = list.slice(0,1)
+    let last = list.pop()
+
+    return first.concat(last)
+};
