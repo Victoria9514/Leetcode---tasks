@@ -1,0 +1,20 @@
+var reverseOnlyLetters = function(s) {
+    let obj = {}
+    for(let i=0; i < s.length; i++){
+      let letter = s.charCodeAt(i)
+      if((letter < 65 || letter > 90) && (letter < 97 || letter > 122)){
+        obj[i] = s[i]
+      }  
+    }
+
+  let r = s.replace(/[^a-zA-Z]+/g, '').split('').reverse().join('').split('');
+
+  for(let i=0; i <= r.length; i++){
+        for(let [key,val] of Object.entries(obj)){
+              if(i == key){
+                r.splice(i,0,val)
+              }
+        }
+    }
+    return r.join('')
+};
